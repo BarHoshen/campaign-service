@@ -8,11 +8,6 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 public class CampaignManagerServiceApplication {
 
-	@Bean
-	public RestTemplate getRestTemplate() {
-		return new RestTemplate();
-	}
-	
 	public static void main(String[] args) {
 		SpringApplication.run(CampaignManagerServiceApplication.class, args);
 	}

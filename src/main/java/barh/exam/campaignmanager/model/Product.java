@@ -1,31 +1,31 @@
 package barh.exam.campaignmanager.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+
+import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 public class Product {
 
 	private String title;
-	@ManyToOne
-	@JoinColumn(name = "category_name")
-	private Category category;
+	private String category;
 	private double price;
 	@Id
+	@GeneratedValue(generator = "UUID")
+	@GenericGenerator(name = "UUID" , strategy = "org.hibernate.id.UUIDGenerator")
 	private String productGuid;
 
 	public Product() {
 		super();
 	}
 
-	public Product(String title, double price, String productGuid) {
+	public Product(String title, double price, String category) {
 		super();
 		this.title = title;
 		this.price = price;
-		this.productGuid = java.util.UUID.randomUUID().toString();
-
+		this.category = category;
 	}
 
 	public String getTitle() {
@@ -38,6 +38,14 @@ public class Product {
 
 	public double getPrice() {
 		return price;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
 	public void setPrice(double price) {

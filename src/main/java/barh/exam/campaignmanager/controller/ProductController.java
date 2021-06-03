@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import barh.exam.campaignmanager.model.Campaign;
 import barh.exam.campaignmanager.model.Product;
 import barh.exam.campaignmanager.service.ProductService;
 
@@ -18,7 +17,7 @@ public class ProductController {
 	@Autowired
 	private ProductService pService;
 	
-	@PostMapping(path = "/Product", consumes = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(path = "/product", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> AddProduct(@RequestBody Product product) {
 		return new ResponseEntity<>(pService.CreateProduct(product), HttpStatus.OK);
 	}

@@ -13,16 +13,14 @@ public class Campaign {
 	@Id
 	private String name;
 	private Calendar startDate;
-	@ManyToOne
-	@JoinColumn(name = "category_name")
-	private Category category;
+	private String category;
 	private double bid;
 	
 	public Campaign() {
 		super();
 	}
 
-	public Campaign(String name, Calendar startDate, Category category, double bid) {
+	public Campaign(String name, Calendar startDate, String category, double bid) {
 		super();
 		this.name = name;
 		this.startDate = startDate;
@@ -46,11 +44,11 @@ public class Campaign {
 		this.startDate = startDate;
 	}
 
-	public Category getCategory() {
+	public String getCategory() {
 		return category;
 	}
 
-	public void setCategory(Category category) {
+	public void setCategory(String category) {
 		this.category = category;
 	}
 
