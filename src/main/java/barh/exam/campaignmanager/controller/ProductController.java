@@ -16,7 +16,7 @@ public class ProductController {
 
 	@Autowired
 	private ProductService pService;
-	
+
 	@PostMapping(path = "/product", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> AddProduct(@RequestBody Product product) {
 		return new ResponseEntity<>(pService.CreateProduct(product), HttpStatus.OK);

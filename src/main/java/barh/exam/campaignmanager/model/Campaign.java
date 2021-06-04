@@ -4,8 +4,6 @@ import java.util.Calendar;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 
 @Entity
 public class Campaign {
@@ -15,7 +13,7 @@ public class Campaign {
 	private Calendar startDate;
 	private String category;
 	private double bid;
-	
+
 	public Campaign() {
 		super();
 	}
@@ -59,6 +57,5 @@ public class Campaign {
 	public void setBid(double bid) {
 		this.bid = bid;
 	}
-	
 
 }

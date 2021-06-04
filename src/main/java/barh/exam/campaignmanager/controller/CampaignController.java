@@ -28,7 +28,7 @@ public class CampaignController {
 		try {
 			return new ResponseEntity<>(campService.CreateCampaign(campaign), HttpStatus.OK);
 		} catch (NotFoundException e) {
-			return new ResponseEntity<>(e.getMessage() , HttpStatus.NOT_FOUND);
+			return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
 		}
 	}
 

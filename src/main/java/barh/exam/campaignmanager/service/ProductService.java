@@ -27,7 +27,7 @@ public class ProductService {
 
 		Product productToReturn = productRepo.findTopByCategoryOrderByPriceDesc(category);
 		if (productToReturn == null)
-			productToReturn = productRepo.FindTopCampaignedOrderByPriceDesc();
+			productToReturn = productRepo.FindTopActiveCampaignedOrderByPriceDesc();
 		return productToReturn;
 	}
 
