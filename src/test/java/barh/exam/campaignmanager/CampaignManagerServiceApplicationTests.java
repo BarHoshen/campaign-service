@@ -33,10 +33,10 @@ class CampaignManagerServiceApplicationTests {
 		pService.CreateProduct(new Product("Hammer", 4.0, "tools"));
 		pService.CreateProduct(new Product("Nail", 1.0, "tools"));
 		pService.CreateProduct(new Product("Pita", 0.5, "bread"));
-		var expectedResultBread =pService.CreateProduct(new Product("Lachuch", 1.5, "bread"));
+		var expectedResultBread = pService.CreateProduct(new Product("Lachuch", 1.5, "bread"));
 
 		Calendar today = Calendar.getInstance();
-		
+
 		Calendar elevenDaysAhead = Calendar.getInstance();
 		elevenDaysAhead.add(Calendar.DAY_OF_YEAR, 11);
 
@@ -48,7 +48,7 @@ class CampaignManagerServiceApplicationTests {
 			cService.CreateCampaign(new Campaign("Fruits", today, "food", 0.5));
 
 			// Starts Yesterday, so may be served, but lower than Fruits
-			 cService.CreateCampaign(new Campaign("Breads", today, "bread", 0.5));
+			cService.CreateCampaign(new Campaign("Breads", today, "bread", 0.5));
 
 		} catch (NotFoundException e) {
 			e.printStackTrace();
